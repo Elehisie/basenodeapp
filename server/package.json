@@ -1,0 +1,29 @@
+{
+  "name": "meschedule",
+  "version": "0.0.1",
+  "description": "A simple scheduler app for teams.",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angularjs",
+    "material",
+    "flexbox",
+    "nodejs",
+    "scheduler"
+  ],
+  "author": "Camila Paschini",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-jwt": "^3.3.0",
+    "jsonwebtoken": "^5.4.1",
+    "mongoose": "^4.2.8",
+    "morgan": "^1.6.1",
+    "multer": "^1.1.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}

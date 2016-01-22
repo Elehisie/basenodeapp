@@ -1,0 +1,42 @@
+<!--<section ng-if="reg.isAdmin">-->
+<section>
+  <article class="full">
+    <h1>You can register here...</h1>
+    <p>
+      Fill out the form below:
+    </p>
+    <form ng-submit="reg.go(user)">
+      <input type="text" placeholder="The new person's full name goes here" ng-model="user.name"><br>
+      <input type="text" placeholder="The new person's nickname goes here" ng-model="user.nickname"><br>
+	    <input type="text" placeholder="The login name goes here" ng-model="user.username"><br>
+      <input type="password" placeholder="The password goes here" ng-model="reg.password"><br>
+	    <input type="password" placeholder="Please confirm the password" ng-model="reg.confirm"><br>
+      <button type="submit" value="Send">Send</button>
+      <div class="success" ng-show="reg.ok">
+        <p ng-bind="reg.ok">
+          something that shouldnt be here unless needed.
+        </p>
+      </div>
+      <div class="error" ng-show="reg.error">
+        <p ng-bind="reg.error">
+          something that shouldnt be here unless needed.
+        </p>
+      </div>
+    </form>
+  </article>
+</section>
+
+<!--
+<section ng-if="!reg.isAdmin">
+  <article class="full">
+    <h1>You are not an admin!</h1>
+    <p>
+      Therefore, you can't add any users.
+    </p>
+    <br />
+    <p>
+      (ノಠ益ಠ)ノ彡┻━┻
+    </p>
+  </article>
+</section>
+-->

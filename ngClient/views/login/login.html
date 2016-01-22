@@ -1,0 +1,29 @@
+
+<h1>You may better login here...o caca</h1>
+<p>Or maybe you need to <a href="#register">register?</a></p>
+<!-- <form ng-submit="login.auth.go(user)">
+  <input type="text" placeholder="Your login name goes here" ng-model="user.username"><br>
+  <input type="password" placeholder="Your password goes here" ng-model="user.password"><br>
+  <div class="error" ng-show="login.auth.error">
+    <p ng-bind="login.auth.error">
+      something that shouldnt be here unless needed.
+    </p>
+  </div>
+  <button type="submit" value="Send">Send</button>
+</form> -->
+<form name="loginForm" ng-submit="login.auth.go(user)" class="md-inline-form" layout-padding layout="row" layout-sm="column">
+  <md-input-container>
+    <label>Userame</label>
+    <input ng-model="user.username" type="text">
+  </md-input-container>
+  <md-input-container>
+    <label>Password</label>
+    <input ng-model="user.password" type="password">
+  </md-input-container>
+  <div class="error" ng-show="login.auth.error">
+    <p ng-bind="login.auth.error">
+      something that shouldnt be here unless needed.
+    </p>
+  </div>
+  <md-button class="md-raised">Send</md-button>
+</form>

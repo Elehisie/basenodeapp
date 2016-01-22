@@ -1,0 +1,53 @@
+body {
+  font-family: 'Times', serif;
+  font-size: 14pt;
+  font-weight: normal;
+}
+
+nav h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  line-height: 0;
+  font-weight: bold;
+}
+
+nav h1,h2,h3,h4,h5,h6 {
+  padding-top: 0;
+  line-height: 1;
+  margin: 0;
+}
+
+nav p {
+  font-family: 'Times', sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+big {
+  font-size: 1.5em;
+}
+
+small {
+  font-size: 0.8em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 0.7em;
+}
+
+h6 {
+  font-size: 0.5em;
+}
+
+.camelcase {
+  text-transform: capitalize;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="A simple scheduler app.">
+    <meta name="author" content="Camila Paschini">
+
+    <title>Fancy App Title goes here</title>
+
+    <link rel="stylesheet" href="/styles/materialStyles.css"></link>
+    <link rel="stylesheet" href="/styles/fonts.css"></link>
+    <link rel="stylesheet" href="/styles/table.css"></link>
+
+    <!-- angular material default styles -->
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css">
+
+
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body layout="column" ng-app="app">
+    <nav ng-controller="navController as nav">
+      <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+          <md-button ng-click="vm.toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+            <ng-md-icon icon="menu" style="fill: white" size="36"></ng-md-icon>
+          </md-button>
+          <h1>Fancy App!</h1>
+          <span flex></span>
+          <!-- conditional block depending on login/not logged in -->
+          <span layout="column" ng-if="nav.auth.isLoggedIn()">
+            <a href="#logout"><ng-md-icon icon="logout" style="fill: white" size="36"></a>
+          </ng-md-icon></span>
+          <span layout="column" ng-if="!nav.auth.isLoggedIn()">
+            <a href="#login"><ng-md-icon icon="login" style="fill: white" size="36"></a>
+          </ng-md-icon></span>
+          <span layout="column" ng-if="nav.auth.isLoggedIn()">
+            <h4>Hello, <span ng-bind="nav.auth.currentUser().split(' ')[0]">Friend</span></h4>
+            <h5>
+              Do you want to <a href="#logout">logout</a> ?
+            </h5>
+          </span>
+          <span layout="column" ng-if="!nav.auth.isLoggedIn()">
+            <h4>Hello, <span ng-bind="nav.auth.currentUser()">Stranger</span></h4>
+            <h5>Do you want to <a href="#login">login</a>?</h5>
+          </span>
+          <!-- end conditional block -->
+      </md-toolbar>
+    </nav>
+
+    <div layout="row" flex>
+      <!-- <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-4dp" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+        <md-button class="md-accent">Profile</md-button>
+        <md-button class="md-accent">All Schedules</md-button>
+      </md-sidenav> -->
+      <section layout="column" flex id="content">
+        <md-content layout="column" flex class="md-padding">
+          <article ng-view></article>
+        </md-content>
+      </section>
+    </div>
+
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="/bower_components/angular-material/angular-material.min.js"></script>
+
+    <!-- Material Icons -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/SVG-Morpheus/0.1.8/svg-morpheus.js"></script>
+
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/directives.js"></script>
+    <script src="/scripts/authService.js"></script>
+    <script src="/scripts/userService.js"></script>
+    <script src="/scripts/navController.js"></script>
+
+    <script src="/views/login/login.js"></script>
+    <script src="/views/register/register.js"></script>
+    <script src="/views/profile/profile.js"></script>
+  </body>
+</html>

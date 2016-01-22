@@ -1,0 +1,18 @@
+<h1>Hello, {{me.username}}</h1>
+<h2>This is an inner page!</h2>
+
+<article>
+  <p>This is where you can place stuff only authenticated users can see, like the profile.</p>
+</article>
+
+<article ng-if="me.isAdmin > -1">
+  <p>Here's the place for stuff only an admin user can see.</p>
+</article>
+
+
+<article ng-if="me.isAdmin == -1" class="full">
+  <h1>Sorry!</h1>
+  <p>
+    You're not an admin, so no. This is optional, and you can use this to show something would be here if the user was an admin.
+  </p>
+</article>
